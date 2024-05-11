@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+      <h1 class="heading">Type To Search Images</h1>
+      <input type="text" placeholder="Search Images" id="search-box">
+      <div class="image-container">
+       <div class="image" data-title="cute">
+        <img src="cute-1.jpeg">
+        <h3>Cute Animal</h3>
+       </div>
+       <div class="image" data-title="cute">
+    <img src="cute-2.jpeg" alt="">
+      <h3>Cute Animal</h3>
+      </div>
+      <div class="image" data-title="cute">
+        <img src="cute-3.jpeg" alt="">
+        <h3>Cute Animal</h3>
+      </div>
+      <div class="image" data-title="car">
+        <img src="car-1.jpeg" alt="">
+        <h3>Car</h3>
+      </div>
+      <div class="image" data-title="car">
+        <img src="car-2.jpeg" alt="">
+        <h3>Car</h3>
+      </div>
+      <div class="image" data-title="city">
+        <img src="city-1.jpeg" alt="">
+        <h3>City</h3>
+      </div>
+      <div class="image" data-title="food">
+        <img src="food-1.jpeg" alt="">
+        <h3>Food</h3>
+        </div>
+        <div class="image" data-title="food">
+            <img src="food-2.jpeg" alt="">
+            <h3>Food</h3>
+        </div>
+        <div class="image" data-title="food">
+            <img src="food-3.jpeg" alt="">
+            <h3>Food</h3>
+        </div>
+      </div>
+    </div>
+    <script>
+        let searchBox= document.querySelector('#search-box');
+        let images=document.querySelectorAll('.image');
+        searchBox.oninput=()=>{
+            images.forEach(hide=>hide.style.display="none");
+            let value=searchBox.value;
+            images.forEach(filter =>{
+                let title=filter.getAttribute('data-title');
+                if(value==title)
+                filter.style.display="block";
+            });
+        };
+        </script>
+</body>
+</html>
